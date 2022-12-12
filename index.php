@@ -1,15 +1,17 @@
 <?php 
 
-    $quote = "Voilà! Alla Vista un umile Veterano del Vaudeville,
-            chiamato a fare le Veci sia della Vittima che del Violento dalle Vicissitudini del fato. 
-            Questo Viso non è Vacuo Vessillo di Vanità, ma semplice Vestigia della Vox populi, ora Vuota, ora Vana. 
-            Tuttavia questa Visita alla Vessazione passata acquista Vigore ed è Votata alla Vittoria 
-            sui Vampiri Virulenti che aprono al Vizio, garanti della Violazione Vessatrice e Vorace della Volontà. 
-            L’unico Verdetto è Vendicarsi… Vendetta… E diventa un Voto non mai Vano
-            poiché il suo Valore e la sua Veridicità Vendicheranno un giorno coloro che sono Vigili e Virtuosi. 
-            In Verità questa Vichyssoise Verbale Vira Verso il Verboso,
-            quindi permettimi di aggiungere che è un grande onore per me conoscerti e che puoi chiamarmi V."
+    $quote = "Voilà! Alla vista un umile veterano del vaudeville,
+            chiamato a fare le veci sia della vittima che del violento dalle vicissitudini del fato. 
+            Questo viso non è vacuo vessillo di vanità, ma semplice vestigia della vox populi, ora vuota, ora vana. 
+            Tuttavia questa visita alla vessazione passata acquista vigore ed è votata alla vittoria 
+            sui vampiri virulenti che aprono al vizio, garanti della violazione vessatrice e vorace della volontà. 
+            L’unico verdetto è vendicarsi… Vendetta… E diventa un voto non mai vano
+            poiché il suo valore e la sua veridicità vendicheranno un giorno coloro che sono vigili e virtuosi. 
+            In verità questa vichyssoise verbale vira verso il verboso,
+            quindi permettimi di aggiungere che è un grande onore per me conoscerti e che puoi chiamarmi V.";
 
+    
+    $censoredWord = $_GET['word']
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +25,19 @@
 <body>
     
     <h2>
-        <?php echo $quote ?>
-    </h2>
+        Il paragrafo contiene 
+        <?php echo strlen($quote) ?>
+        caratteri
+    </h2>    
+
+    <p>
+        <?php echo str_replace($censoredWord, '***', $quote); ?>
+    </p>
+
+    <form action="" method="GET">
+        <input type="text" name="word">
+        <button type="submit">Censura</button>
+    </form>
 
 
 </body>
